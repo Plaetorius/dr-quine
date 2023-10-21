@@ -24,7 +24,7 @@ clean:
 
 fclean:
 	@echo "FCleaned ${NAME}"
-	@${RM} ${OBJS} ${NAME} ${DEPS}
+	@${RM} ${OBJS} ${NAME} ${DEPS} Grace_kid.c
 
 re: fclean all
 
