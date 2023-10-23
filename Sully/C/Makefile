@@ -31,6 +31,9 @@ re: fclean all
 subject_test:
 	clang -Wall -Wextra -Werror -o Sully Sully.c; ./Sully; diff Sully.c Sully.c
 
+clean_others:
+	rm -rf Sully_*
+
 -include ${DEPS}
 
 .PHONY: all clean fclean re
