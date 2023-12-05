@@ -7,4 +7,4 @@ int main(){
 /*
 	This an inside comment
 */
-char *a="#include <stdio.h>%cint rline(){return 10;}%c/*%c%cThis is an outside comment%c*/%cint main(){%c/*%c%cThis an inside comment%c*/%cchar *a=%c%s%c;printf(a, rline(), rline(), rline(), 9, rline(), rline(), rline(), rline(), 9, rline(), rline(), 34, a, 34);return 0;}";printf(a, rline(), rline(), rline(), 9, rline(), rline(), rline(), rline(), 9, rline(), rline(), 34, a, 34);return 0;}
+char *a="#include <stdio.h>%1$cint rline(){return 10;}%1$c/*%1$c%2$cThis is an outside comment%1$c*/%1$cint main(){%1$c/*%1$c%2$cThis an inside comment%1$c*/%1$cchar *a=%3$c%4$s%3$c;printf(a, rline(), 9, 34, a);return 0;}";printf(a, rline(), 9, 34, a);return 0;}

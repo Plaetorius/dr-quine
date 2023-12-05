@@ -1,6 +1,6 @@
 NAME	= Sully
 CC		= cc
-FLAGS	= -Wall -Wextra -Werror -MMD
+FLAGS	= -Wall -Wextra -Werror -MMD -g3
 SRCS	= Sully.c
 OBJS	= ${SRCS:.c=.o}
 DEPS	= ${OBJS:.o=.d}

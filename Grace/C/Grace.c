@@ -3,7 +3,7 @@
 /*
 	This is a comment
 */
-#define MAIN int main() {char *string="#define FCNTL <fcntl.h>%c#define STDIO <stdio.h>%c/*%c%cThis is a comment%c*/%c#define MAIN int main() {char *string=%c%s%c; dprintf(open(%cGrace_kid.c%c, O_WRONLY | O_CREAT, 0644), string, 10, 10, 10, 9, 10, 10, 34, string, 34, 34, 34, 10, 10, 10); return 0;}%c#include FCNTL%c#include STDIO%cMAIN"; dprintf(open("Grace_kid.c", O_WRONLY | O_CREAT, 0644), string, 10, 10, 10, 9, 10, 10, 34, string, 34, 34, 34, 10, 10, 10); return 0;}
+#define MAIN(x) int main() {char *string="#define FCNTL <fcntl.h>%1$c#define STDIO <stdio.h>%1$c/*%1$c%2$cThis is a comment%1$c*/%1$c#define MAIN(x) int main() {char *string=%3$c%4$s%3$c; dprintf(open(%3$cGrace_kid.c%3$c, O_WRONLY | O_CREAT, 0644), string, x, 9, 34, string); return 0;}%1$c#include FCNTL%1$c#include STDIO%1$cMAIN(10)"; dprintf(open("Grace_kid.c", O_WRONLY | O_CREAT, 0644), string, x, 9, 34, string); return 0;}
 #include FCNTL
 #include STDIO
-MAIN
+MAIN(10)

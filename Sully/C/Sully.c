@@ -1,19 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
-int main()
-{
+
+int main() {
 	int i = 5;
-	if (i < 1)
-		return 1;
+	if (i < 1) return 1;
 	char name[] = "Sully_ .c";
-	char comp[] = "gcc Sully_ .c -o Sully_ ; ./Sully_ ";
-	name[6] = i + 47;
-	comp[10] = i + 47;
-	comp[23] = i + 47;
-	comp[34] = i + 47;
- 	char *a = "#include <stdio.h>%c#include <stdlib.h>%c#include <fcntl.h>%cint main()%c{%c%cint i = %d;%c%cif (i < 1)%c%c%creturn 1;%c%cchar name[] = %cSully_ .c%c;%c%cchar comp[] = %cgcc Sully_ .c -o Sully_ ; ./Sully_ %c;%c%cname[6] = i + 47;%c%ccomp[10] = i + 47;%c%ccomp[23] = i + 47;%c%ccomp[34] = i + 47;%c %cchar *a = %c%s%c;%c%cdprintf(open(name, O_WRONLY | O_CREAT, 0644), a, 10, 10, 10, 10, 10, 9, i - 1, 10, 9, 10, 9, 9, 10, 9, 34, 34, 10, 9, 34, 34, 10, 9, 10, 9, 10, 9, 10, 9, 10, 9, 34, a, 34, 10, 9, 10, 9, 10, 9, 10); %c%csystem(i < 1 ? NULL : comp);%c%creturn 0;%c}";
-	dprintf(open(name, O_WRONLY | O_CREAT, 0644), a, 10, 10, 10, 10, 10, 9, i - 1, 10, 9, 10, 9, 9, 10, 9, 34, 34, 10, 9, 34, 34, 10, 9, 10, 9, 10, 9, 10, 9, 10, 9, 34, a, 34, 10, 9, 10, 9, 10, 9, 10); 
-	system(i < 1 ? NULL : comp);
-	return 0;
+	char comp[] = "clang Sully_ .c -o Sully_ ; ./Sully_ ";
+	name[6] = i + 48;
+	comp[12] = i + 48;
+	comp[25] = i + 48;
+	comp[36] = i + 48;
+	char *a = "#include <stdio.h>%1$c#include <stdlib.h>%1$c#include <fcntl.h>%1$cint main()%1$c{%1$cint i = %2$d;%1$cif (i < 1) return 1;%1$cchar name[] = %3$cSully_ .c%3$c;%1$cchar comp[] = %3$cclang Sully_ .c -o Sully_ ; ./Sully_ %3$c;%1$cname[6] = i + 48; comp[12] = i + 48; comp[25] = i + 48; comp[36] = i + 48; %1$cchar *a = %3$c%4$s%3$c;%1$cprintf(%3$c%%s%3$c, comp);%1$cdprintf(open(name, O_WRONLY | O_CREAT, 0644), a, 10, i - 1, 34, a);%1$csystem(comp);%1$c}";
+	dprintf(open(name, O_WRONLY | O_CREAT, 0644), a, 10, i - 1, 34, a);
+	system(comp);
 }
