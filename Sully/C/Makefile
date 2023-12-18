@@ -20,11 +20,11 @@ all: ${NAME}
 
 clean:
 	@echo "Cleaned ${NAME}"
-	@${RM} ${OBJS} ${DEPS}
+	@${RM} ${OBJS} ${DEPS} Sully_*
 
 fclean:
 	@echo "FCleaned ${NAME}"
-	@${RM} ${OBJS} ${NAME} ${DEPS}
+	@${RM} ${OBJS} ${NAME} ${DEPS} Sully_*
 
 re: fclean all
 
